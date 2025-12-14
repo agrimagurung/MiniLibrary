@@ -1,5 +1,6 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLineEdit 
+import csv
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLineEdit, QTableWidget 
 from login_ui import Ui_MainWindow as Ui_Login
 from admin_dashboard_ui import Ui_MainWindow as Ui_Admin_Dashboard
 
@@ -72,6 +73,8 @@ class AdminDashboard(QMainWindow):
         except:
             Bookdata = open("Booklist.txt", "xt")
 
+       
+
         self.ui.Savebtn.clicked.connect(self.Save_list)
         self.ui.SearchBar.returnPressed.connect(self.Search)
         
@@ -97,16 +100,36 @@ class AdminDashboard(QMainWindow):
         with open(Booklist, 'w') as file:
             for row in range(self.ui.Booklist.rowCount()):
                 for col in range(self.ui.Booklist.columnCount()):
-                    print("test1")
+                   item = self.ui.Booklist.item(row, col)
                     
-                    if self.ui.Booklist.item(row, col).text() is None:
-                        print("test2")
-                        text = " "
-                    else:
+                   if item is None:
+                          text = " "
+                   else:
+                        text = item.text()
                         text = self.ui.Booklist.item(row, col).text()
                         print(text)
-                    file.write(text +", ")
+                        file.write(text +", ")
                 file.write("\n")
+
+    def load_list(self):
+         Booklist = ("Booklist.txt")
+         with open(Booklist, 'r') as file:
+            data = csv.reader(file)
+            data = list(data)
+            
+
+            for row in range(self.ui.Booklist.rowCount()):
+               
+                for col in range(self.ui.Booklist.columnCount()):
+                   
+                   item = self.ui.Booklist.item(row, col)
+                   
+                   item.setText(data[row][col])
+                   
+                   self.ui.Booklist.setItem(row, col, item)
+                    
+                   
+
                 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
@@ -114,4 +137,5 @@ if __name__ == "__main__":
     window.show()
     sys.exit(app.exec_())
 
-        
+          
+    
