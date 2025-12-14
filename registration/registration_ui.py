@@ -28,7 +28,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
-        self.verticalLayout.setContentsMargins(350, 150, 350, 150)
+        self.verticalLayout.setContentsMargins(450, 150, 450, 150)
         self.verticalLayout.setSpacing(50)
         self.verticalLayout.setObjectName("verticalLayout")
         self.frame = QtWidgets.QFrame(self.centralwidget)
@@ -37,7 +37,7 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
         self.frame.setSizePolicy(sizePolicy)
-        self.frame.setMinimumSize(QtCore.QSize(580, 560))
+        self.frame.setMinimumSize(QtCore.QSize(580, 600))
         self.frame.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.frame.setStyleSheet("background-color: rgba(41, 38, 35, 0.75);\n"
 "border-radius: 20px; /* creates rounded corners */\n"
@@ -46,147 +46,10 @@ class Ui_MainWindow(object):
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
         self.gridLayout = QtWidgets.QGridLayout(self.frame)
-        self.gridLayout.setContentsMargins(20, 10, 20, 20)
+        self.gridLayout.setContentsMargins(50, 10, 50, 20)
         self.gridLayout.setHorizontalSpacing(20)
         self.gridLayout.setVerticalSpacing(10)
         self.gridLayout.setObjectName("gridLayout")
-        self.lblCreateAccount = QtWidgets.QLabel(self.frame)
-        self.lblCreateAccount.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        font = QtGui.QFont()
-        font.setPointSize(27)
-        self.lblCreateAccount.setFont(font)
-        self.lblCreateAccount.setStyleSheet("color: white;\n"
-"background: transparent;\n"
-"")
-        self.lblCreateAccount.setAlignment(QtCore.Qt.AlignCenter)
-        self.lblCreateAccount.setObjectName("lblCreateAccount")
-        self.gridLayout.addWidget(self.lblCreateAccount, 1, 0, 1, 3)
-        self.gridLayoutRow1 = QtWidgets.QGridLayout()
-        self.gridLayoutRow1.setVerticalSpacing(0)
-        self.gridLayoutRow1.setObjectName("gridLayoutRow1")
-        self.horizontalLayoutNameLabels = QtWidgets.QHBoxLayout()
-        self.horizontalLayoutNameLabels.setSpacing(30)
-        self.horizontalLayoutNameLabels.setObjectName("horizontalLayoutNameLabels")
-        self.lblFirstName = QtWidgets.QLabel(self.frame)
-        font = QtGui.QFont()
-        font.setPointSize(11)
-        self.lblFirstName.setFont(font)
-        self.lblFirstName.setStyleSheet("color: white;\n"
-"background: transparent;\n"
-"padding-left: 10px;")
-        self.lblFirstName.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft)
-        self.lblFirstName.setObjectName("lblFirstName")
-        self.horizontalLayoutNameLabels.addWidget(self.lblFirstName)
-        self.lblLastName = QtWidgets.QLabel(self.frame)
-        font = QtGui.QFont()
-        font.setPointSize(11)
-        self.lblLastName.setFont(font)
-        self.lblLastName.setStyleSheet("color: white;\n"
-"background: transparent;\n"
-"padding-left: 10px;")
-        self.lblLastName.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft)
-        self.lblLastName.setObjectName("lblLastName")
-        self.horizontalLayoutNameLabels.addWidget(self.lblLastName)
-        self.gridLayoutRow1.addLayout(self.horizontalLayoutNameLabels, 0, 0, 1, 1)
-        self.horizontalLayoutNameInputs = QtWidgets.QHBoxLayout()
-        self.horizontalLayoutNameInputs.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
-        self.horizontalLayoutNameInputs.setSpacing(30)
-        self.horizontalLayoutNameInputs.setObjectName("horizontalLayoutNameInputs")
-        self.firstNameInput = QtWidgets.QLineEdit(self.frame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.firstNameInput.sizePolicy().hasHeightForWidth())
-        self.firstNameInput.setSizePolicy(sizePolicy)
-        self.firstNameInput.setMinimumSize(QtCore.QSize(253, 37))
-        self.firstNameInput.setMaximumSize(QtCore.QSize(16777215, 100))
-        font = QtGui.QFont()
-        font.setPointSize(13)
-        self.firstNameInput.setFont(font)
-        self.firstNameInput.setStyleSheet("QLineEdit {\n"
-"color: white;\n"
-"background: transparent;\n"
-"border-radius: 10px; /* creates rounded corners */\n"
-"border: 1px solid black;\n"
-"padding-left: 5px;\n"
-"background-color: rgba(41, 38, 35, 0.9);\n"
-"}\n"
-"QLineEdit:focus {\n"
-"    border: 1px solid white;  /* border when selected */\n"
-"}")
-        self.firstNameInput.setObjectName("firstNameInput")
-        self.horizontalLayoutNameInputs.addWidget(self.firstNameInput)
-        self.lastNameInput = QtWidgets.QLineEdit(self.frame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lastNameInput.sizePolicy().hasHeightForWidth())
-        self.lastNameInput.setSizePolicy(sizePolicy)
-        self.lastNameInput.setMinimumSize(QtCore.QSize(253, 37))
-        self.lastNameInput.setMaximumSize(QtCore.QSize(16777215, 100))
-        font = QtGui.QFont()
-        font.setPointSize(13)
-        self.lastNameInput.setFont(font)
-        self.lastNameInput.setStyleSheet("QLineEdit {\n"
-"color: white;\n"
-"background: transparent;\n"
-"border-radius: 10px; /* creates rounded corners */\n"
-"border: 1px solid black;\n"
-"padding-left: 5px;\n"
-"background-color: rgba(41, 38, 35, 0.9);\n"
-"}\n"
-"QLineEdit:focus {\n"
-"    border: 1px solid white;  /* border when selected */\n"
-"}")
-        self.lastNameInput.setObjectName("lastNameInput")
-        self.horizontalLayoutNameInputs.addWidget(self.lastNameInput)
-        self.gridLayoutRow1.addLayout(self.horizontalLayoutNameInputs, 1, 0, 1, 1)
-        self.gridLayout.addLayout(self.gridLayoutRow1, 2, 0, 1, 3)
-        self.horizontalLayoutRow5 = QtWidgets.QHBoxLayout()
-        self.horizontalLayoutRow5.setContentsMargins(10, -1, -1, -1)
-        self.horizontalLayoutRow5.setObjectName("horizontalLayoutRow5")
-        self.lblAlert = QtWidgets.QLabel(self.frame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lblAlert.sizePolicy().hasHeightForWidth())
-        self.lblAlert.setSizePolicy(sizePolicy)
-        self.lblAlert.setMinimumSize(QtCore.QSize(253, 0))
-        self.lblAlert.setMaximumSize(QtCore.QSize(16777215, 30))
-        font = QtGui.QFont()
-        font.setFamily("Inter Variable Text")
-        font.setPointSize(10)
-        self.lblAlert.setFont(font)
-        self.lblAlert.setStyleSheet("color: white;\n"
-"background: transparent;\n"
-"")
-        self.lblAlert.setText("")
-        self.lblAlert.setAlignment(QtCore.Qt.AlignCenter)
-        self.lblAlert.setObjectName("lblAlert")
-        self.horizontalLayoutRow5.addWidget(self.lblAlert)
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayoutRow5.addItem(spacerItem)
-        self.btnSubmit = QtWidgets.QPushButton(self.frame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btnSubmit.sizePolicy().hasHeightForWidth())
-        self.btnSubmit.setSizePolicy(sizePolicy)
-        self.btnSubmit.setMaximumSize(QtCore.QSize(150, 30))
-        self.btnSubmit.setStyleSheet("QPushButton {\n"
-"    color: white;\n"
-"    border-radius: 10px; /* creates rounded corners */\n"
-"    border: 1px solid rgba(41, 38, 35, 0.9);\n"
-"    padding-left: 5px;\n"
-"    background-color: rgb(174, 230, 178);\n"
-"}\n"
-"QPushButton:pressed {\n"
-"    background-color: rgb(135, 218, 141);\n"
-"}\n"
-"")
-        self.btnSubmit.setObjectName("btnSubmit")
-        self.horizontalLayoutRow5.addWidget(self.btnSubmit)
-        self.gridLayout.addLayout(self.horizontalLayoutRow5, 11, 0, 1, 3)
         self.gridLayoutRow2 = QtWidgets.QGridLayout()
         self.gridLayoutRow2.setVerticalSpacing(0)
         self.gridLayoutRow2.setObjectName("gridLayoutRow2")
@@ -252,7 +115,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.passwordInput.sizePolicy().hasHeightForWidth())
         self.passwordInput.setSizePolicy(sizePolicy)
         self.passwordInput.setMinimumSize(QtCore.QSize(253, 37))
-        self.passwordInput.setMaximumSize(QtCore.QSize(16777215, 100))
+        self.passwordInput.setMaximumSize(QtCore.QSize(16777215, 80))
         font = QtGui.QFont()
         font.setPointSize(13)
         self.passwordInput.setFont(font)
@@ -312,6 +175,98 @@ class Ui_MainWindow(object):
         self.securityAnswerInput.setObjectName("securityAnswerInput")
         self.gridLayoutRow4.addWidget(self.securityAnswerInput, 1, 0, 1, 1)
         self.gridLayout.addLayout(self.gridLayoutRow4, 10, 0, 1, 3)
+        self.gridLayoutRow1 = QtWidgets.QGridLayout()
+        self.gridLayoutRow1.setVerticalSpacing(0)
+        self.gridLayoutRow1.setObjectName("gridLayoutRow1")
+        self.horizontalLayoutNameLabels = QtWidgets.QHBoxLayout()
+        self.horizontalLayoutNameLabels.setSpacing(30)
+        self.horizontalLayoutNameLabels.setObjectName("horizontalLayoutNameLabels")
+        self.lblFirstName = QtWidgets.QLabel(self.frame)
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.lblFirstName.setFont(font)
+        self.lblFirstName.setStyleSheet("color: white;\n"
+"background: transparent;\n"
+"padding-left: 10px;")
+        self.lblFirstName.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft)
+        self.lblFirstName.setObjectName("lblFirstName")
+        self.horizontalLayoutNameLabels.addWidget(self.lblFirstName)
+        self.lblLastName = QtWidgets.QLabel(self.frame)
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.lblLastName.setFont(font)
+        self.lblLastName.setStyleSheet("color: white;\n"
+"background: transparent;\n"
+"padding-left: 10px;")
+        self.lblLastName.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft)
+        self.lblLastName.setObjectName("lblLastName")
+        self.horizontalLayoutNameLabels.addWidget(self.lblLastName)
+        self.gridLayoutRow1.addLayout(self.horizontalLayoutNameLabels, 0, 0, 1, 1)
+        self.horizontalLayoutNameInputs = QtWidgets.QHBoxLayout()
+        self.horizontalLayoutNameInputs.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
+        self.horizontalLayoutNameInputs.setSpacing(30)
+        self.horizontalLayoutNameInputs.setObjectName("horizontalLayoutNameInputs")
+        self.firstNameInput = QtWidgets.QLineEdit(self.frame)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.firstNameInput.sizePolicy().hasHeightForWidth())
+        self.firstNameInput.setSizePolicy(sizePolicy)
+        self.firstNameInput.setMinimumSize(QtCore.QSize(253, 37))
+        self.firstNameInput.setMaximumSize(QtCore.QSize(16777215, 80))
+        font = QtGui.QFont()
+        font.setPointSize(13)
+        self.firstNameInput.setFont(font)
+        self.firstNameInput.setStyleSheet("QLineEdit {\n"
+"color: white;\n"
+"background: transparent;\n"
+"border-radius: 10px; /* creates rounded corners */\n"
+"border: 1px solid black;\n"
+"padding-left: 5px;\n"
+"background-color: rgba(41, 38, 35, 0.9);\n"
+"}\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid white;  /* border when selected */\n"
+"}")
+        self.firstNameInput.setObjectName("firstNameInput")
+        self.horizontalLayoutNameInputs.addWidget(self.firstNameInput)
+        self.lastNameInput = QtWidgets.QLineEdit(self.frame)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lastNameInput.sizePolicy().hasHeightForWidth())
+        self.lastNameInput.setSizePolicy(sizePolicy)
+        self.lastNameInput.setMinimumSize(QtCore.QSize(253, 37))
+        self.lastNameInput.setMaximumSize(QtCore.QSize(16777215, 80))
+        font = QtGui.QFont()
+        font.setPointSize(13)
+        self.lastNameInput.setFont(font)
+        self.lastNameInput.setStyleSheet("QLineEdit {\n"
+"color: white;\n"
+"background: transparent;\n"
+"border-radius: 10px; /* creates rounded corners */\n"
+"border: 1px solid black;\n"
+"padding-left: 5px;\n"
+"background-color: rgba(41, 38, 35, 0.9);\n"
+"}\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid white;  /* border when selected */\n"
+"}")
+        self.lastNameInput.setObjectName("lastNameInput")
+        self.horizontalLayoutNameInputs.addWidget(self.lastNameInput)
+        self.gridLayoutRow1.addLayout(self.horizontalLayoutNameInputs, 1, 0, 1, 1)
+        self.gridLayout.addLayout(self.gridLayoutRow1, 2, 0, 1, 3)
+        self.lblCreateAccount = QtWidgets.QLabel(self.frame)
+        self.lblCreateAccount.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setPointSize(27)
+        self.lblCreateAccount.setFont(font)
+        self.lblCreateAccount.setStyleSheet("color: white;\n"
+"background: transparent;\n"
+"")
+        self.lblCreateAccount.setAlignment(QtCore.Qt.AlignCenter)
+        self.lblCreateAccount.setObjectName("lblCreateAccount")
+        self.gridLayout.addWidget(self.lblCreateAccount, 1, 0, 1, 3)
         self.gridLayoutRow3 = QtWidgets.QGridLayout()
         self.gridLayoutRow3.setVerticalSpacing(0)
         self.gridLayoutRow3.setObjectName("gridLayoutRow3")
@@ -322,9 +277,9 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.comboBoxSecurityQuestion.sizePolicy().hasHeightForWidth())
         self.comboBoxSecurityQuestion.setSizePolicy(sizePolicy)
         self.comboBoxSecurityQuestion.setMinimumSize(QtCore.QSize(538, 37))
-        self.comboBoxSecurityQuestion.setMaximumSize(QtCore.QSize(16777215, 100))
+        self.comboBoxSecurityQuestion.setMaximumSize(QtCore.QSize(16777215, 80))
         font = QtGui.QFont()
-        font.setPointSize(-1)
+        font.setPointSize(13)
         self.comboBoxSecurityQuestion.setFont(font)
         self.comboBoxSecurityQuestion.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         self.comboBoxSecurityQuestion.setFocusPolicy(QtCore.Qt.StrongFocus)
@@ -334,7 +289,7 @@ class Ui_MainWindow(object):
 "padding-left: 10px;\n"
 "color: white;\n"
 "border: 1px solid black;\n"
-"font-size: 13px;\n"
+"/*font-size: 13px;*/\n"
 "}\n"
 "QComboBox:focus {\n"
 "    border: 1px solid white;  /* border when selected */\n"
@@ -379,6 +334,71 @@ class Ui_MainWindow(object):
         self.lblSecurityQuestion.setObjectName("lblSecurityQuestion")
         self.gridLayoutRow3.addWidget(self.lblSecurityQuestion, 1, 0, 1, 1)
         self.gridLayout.addLayout(self.gridLayoutRow3, 7, 0, 1, 3)
+        self.horizontalLayoutRow5 = QtWidgets.QHBoxLayout()
+        self.horizontalLayoutRow5.setContentsMargins(10, -1, 10, -1)
+        self.horizontalLayoutRow5.setObjectName("horizontalLayoutRow5")
+        self.toolButton = QtWidgets.QToolButton(self.frame)
+        self.toolButton.setMinimumSize(QtCore.QSize(250, 30))
+        self.toolButton.setMaximumSize(QtCore.QSize(16777215, 60))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.toolButton.setFont(font)
+        self.toolButton.setStyleSheet("color: white;")
+        self.toolButton.setIconSize(QtCore.QSize(40, 40))
+        self.toolButton.setToolButtonStyle(QtCore.Qt.ToolButtonTextBesideIcon)
+        self.toolButton.setArrowType(QtCore.Qt.LeftArrow)
+        self.toolButton.setObjectName("toolButton")
+        self.horizontalLayoutRow5.addWidget(self.toolButton)
+        spacerItem = QtWidgets.QSpacerItem(550, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayoutRow5.addItem(spacerItem)
+        self.btnSubmit = QtWidgets.QPushButton(self.frame)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btnSubmit.sizePolicy().hasHeightForWidth())
+        self.btnSubmit.setSizePolicy(sizePolicy)
+        self.btnSubmit.setMaximumSize(QtCore.QSize(150, 60))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.btnSubmit.setFont(font)
+        self.btnSubmit.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"    border-radius: 10px; /* creates rounded corners */\n"
+"    border: 1px solid rgba(41, 38, 35, 0.9);\n"
+"    padding-left: 5px;\n"
+"    background-color: rgb(135, 218, 141);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(174, 230, 178);\n"
+"}\n"
+"QPushButton:hover {\n"
+"    border: 2px solid white;\n"
+"    background-color: rgb(174, 230, 178);\n"
+"\n"
+"}")
+        self.btnSubmit.setObjectName("btnSubmit")
+        self.horizontalLayoutRow5.addWidget(self.btnSubmit)
+        self.gridLayout.addLayout(self.horizontalLayoutRow5, 11, 0, 1, 3)
+        self.lblAlert = QtWidgets.QLabel(self.frame)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lblAlert.sizePolicy().hasHeightForWidth())
+        self.lblAlert.setSizePolicy(sizePolicy)
+        self.lblAlert.setMinimumSize(QtCore.QSize(253, 0))
+        self.lblAlert.setMaximumSize(QtCore.QSize(16777215, 30))
+        font = QtGui.QFont()
+        font.setFamily("Inter Variable Text")
+        font.setPointSize(10)
+        self.lblAlert.setFont(font)
+        self.lblAlert.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
+        self.lblAlert.setStyleSheet("color: white;\n"
+"background: transparent;\n"
+"")
+        self.lblAlert.setText("")
+        self.lblAlert.setAlignment(QtCore.Qt.AlignCenter)
+        self.lblAlert.setObjectName("lblAlert")
+        self.gridLayout.addWidget(self.lblAlert, 12, 1, 1, 1)
         self.verticalLayout.addWidget(self.frame)
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -388,18 +408,19 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.lblCreateAccount.setText(_translate("MainWindow", "Create an Account"))
-        self.lblFirstName.setText(_translate("MainWindow", "First Name"))
-        self.lblLastName.setText(_translate("MainWindow", "Last Name"))
-        self.btnSubmit.setText(_translate("MainWindow", "Submit"))
         self.lblUserName.setText(_translate("MainWindow", "Username"))
         self.lblPassword.setText(_translate("MainWindow", "Password"))
         self.lblSecurityResponse.setText(_translate("MainWindow", "Enter your response:"))
+        self.lblFirstName.setText(_translate("MainWindow", "First Name"))
+        self.lblLastName.setText(_translate("MainWindow", "Last Name"))
+        self.lblCreateAccount.setText(_translate("MainWindow", "Create an Account"))
         self.comboBoxSecurityQuestion.setItemText(0, _translate("MainWindow", "What is your mother’s maiden name?"))
         self.comboBoxSecurityQuestion.setItemText(1, _translate("MainWindow", "What was the name of your first pet?"))
         self.comboBoxSecurityQuestion.setItemText(2, _translate("MainWindow", "What city were you born in?"))
         self.comboBoxSecurityQuestion.setItemText(3, _translate("MainWindow", "What is your Student ID?"))
         self.lblSecurityQuestion.setText(_translate("MainWindow", "Select a Security Question:"))
+        self.toolButton.setText(_translate("MainWindow", "Go Back to Login"))
+        self.btnSubmit.setText(_translate("MainWindow", "Submit"))
 import res_rc
 
 
