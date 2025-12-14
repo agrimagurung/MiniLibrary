@@ -1,7 +1,8 @@
 import sys, csv, os
 import traceback
-from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QTableWidget, QTableWidgetItem, QHeaderView
 from registration_ui import Ui_MainWindow as Ui_Registration
+from PyQt5.QtCore import Qt
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'login'))
 from Login_ui import Ui_MainWindow as Ui_Login
@@ -63,7 +64,11 @@ class LoginPage(QMainWindow):
 
         if result:
             self.ui.lblStatus.setText("Login successful!")
-            self.dashboard = DashboardWindow(result[0])  # pass first name
+            # self.dashboard = DashboardWindow(result[0])  # pass first name
+            first_name = result[0]
+            username = result[2]
+            self.dashboard = DashboardWindow(first_name, username)
+
             self.dashboard.showMaximized()
             self.close()
         else:
@@ -84,15 +89,49 @@ class LoginPage(QMainWindow):
 
 
 class DashboardWindow(QMainWindow):
-    def __init__(self, first_name):
+    def __init__(self, first_name, username):
         super().__init__()
         self.ui = Ui_StudentDashboard()
         self.ui.setupUi(self)
+
         self.first_name = first_name
+        self.username = username
+
+        # align table headers to left
+        self.ui.booksTableWidget.horizontalHeader().setDefaultAlignment(Qt.AlignLeft)
+
+        header = self.ui.booksTableWidget.horizontalHeader()
+        header.setSectionResizeMode(QHeaderView.Stretch)
 
         self.setWindowTitle(f"Student Dashboard - {first_name}")
         # update the header lbl with user's first name
         self.ui.dashboardLbl.setText(f"{first_name}'s Dashboard")
+
+        self.load_student_books()
+
+    def load_student_books(self):
+        table = self.ui.booksTableWidget  # make sure this matches Qt Designer
+        table.setRowCount(0)
+
+        path = os.path.join(os.path.dirname(__file__), '..', 'admin', 'books_data.csv')
+
+        with open(path, "r", newline="", encoding="utf-8") as file:
+            reader = csv.reader(file)
+            next(reader) # skip CSV header row
+
+            for row in reader:
+                status = row[4]
+                checked_out_by= row[5]
+
+                if status == "issued" and checked_out_by == self.username:
+                    row_position = table.rowCount()
+                    table.insertRow(row_position)
+                    table.setItem(row_position, 0, QTableWidgetItem(row[1]))  # title
+                    table.setItem(row_position, 1, QTableWidgetItem(row[2]))  # author
+                    table.setItem(row_position, 2, QTableWidgetItem(row[6]))  # due date
+                
+        table.resizeColumnsToContents()
+
 
 class RegistrationWindow(QMainWindow):
     def __init__(self):

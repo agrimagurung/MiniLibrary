@@ -15,30 +15,26 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1389, 1001)
+        MainWindow.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.gridLayout.setHorizontalSpacing(0)
-        self.gridLayout.setVerticalSpacing(10)
+        self.gridLayout.setSpacing(0)
         self.gridLayout.setObjectName("gridLayout")
-        self.booksListWidget = QtWidgets.QListWidget(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.booksListWidget.sizePolicy().hasHeightForWidth())
-        self.booksListWidget.setSizePolicy(sizePolicy)
-        self.booksListWidget.setObjectName("booksListWidget")
-        self.gridLayout.addWidget(self.booksListWidget, 1, 3, 1, 1)
-        spacerItem = QtWidgets.QSpacerItem(80, 40, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem, 1, 1, 1, 1)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem, 4, 6, 1, 1)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.gridLayout.addItem(spacerItem1, 5, 5, 1, 1)
+        spacerItem2 = QtWidgets.QSpacerItem(80, 40, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem2, 2, 1, 1, 1)
         self.dashboardLbl = QtWidgets.QLabel(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.dashboardLbl.sizePolicy().hasHeightForWidth())
         self.dashboardLbl.setSizePolicy(sizePolicy)
-        self.dashboardLbl.setMaximumSize(QtCore.QSize(16777215, 120))
+        self.dashboardLbl.setMaximumSize(QtCore.QSize(16777215, 150))
         font = QtGui.QFont()
         font.setPointSize(18)
         font.setBold(True)
@@ -48,10 +44,20 @@ class Ui_MainWindow(object):
 "color: rgb(110, 99, 93);")
         self.dashboardLbl.setObjectName("dashboardLbl")
         self.gridLayout.addWidget(self.dashboardLbl, 0, 2, 1, 5)
+        spacerItem3 = QtWidgets.QSpacerItem(80, 40, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem3, 4, 4, 1, 1)
         self.widget_2 = QtWidgets.QWidget(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.widget_2.sizePolicy().hasHeightForWidth())
+        self.widget_2.setSizePolicy(sizePolicy)
+        self.widget_2.setMinimumSize(QtCore.QSize(0, 250))
+        self.widget_2.setMaximumSize(QtCore.QSize(16777215, 16777211))
         self.widget_2.setStyleSheet("background-color: white; border-radius: 10px; background-color: rgb(237, 229, 218);")
         self.widget_2.setObjectName("widget_2")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.widget_2)
+        self.gridLayout_2.setContentsMargins(20, 20, 20, 20)
         self.gridLayout_2.setObjectName("gridLayout_2")
         self.libraryHoursLbl = QtWidgets.QLabel(self.widget_2)
         font = QtGui.QFont()
@@ -111,9 +117,7 @@ class Ui_MainWindow(object):
         self.weekendLbl.setObjectName("weekendLbl")
         self.verticalLayout.addWidget(self.weekendLbl)
         self.gridLayout_2.addLayout(self.verticalLayout, 1, 0, 1, 1)
-        self.gridLayout.addWidget(self.widget_2, 3, 5, 1, 1)
-        spacerItem1 = QtWidgets.QSpacerItem(80, 40, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem1, 3, 4, 1, 1)
+        self.gridLayout.addWidget(self.widget_2, 4, 5, 1, 1)
         self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -144,7 +148,18 @@ class Ui_MainWindow(object):
         font.setBold(False)
         font.setWeight(50)
         self.dashboardBtn.setFont(font)
-        self.dashboardBtn.setStyleSheet("border-radius: 10px; background-color: white; text-align: left; padding-left: 30px;")
+        self.dashboardBtn.setStyleSheet("QPushButton {\n"
+"    border-radius: 10px;\n"
+"    background-color: white; \n"
+"    text-align: left; \n"
+"    padding-left: 30px;\n"
+"    color: rgb(74, 66, 62);\n"
+"\n"
+"}\n"
+"QPushButton:hover {\n"
+"    border: 2px solid rgb(110, 99, 93);;\n"
+"    background-color: rgb(212, 244, 211);\n"
+"}")
         self.dashboardBtn.setObjectName("dashboardBtn")
         self.verticalLayout_3.addWidget(self.dashboardBtn)
         self.myBooksBtn = QtWidgets.QPushButton(self.groupBox)
@@ -159,7 +174,18 @@ class Ui_MainWindow(object):
         font.setBold(False)
         font.setWeight(50)
         self.myBooksBtn.setFont(font)
-        self.myBooksBtn.setStyleSheet("border-radius: 10px; background-color: white; text-align: left; padding-left: 30px;")
+        self.myBooksBtn.setStyleSheet("QPushButton {\n"
+"    border-radius: 10px;\n"
+"    background-color: white; \n"
+"    text-align: left; \n"
+"    padding-left: 30px;\n"
+"    color: rgb(74, 66, 62);\n"
+"\n"
+"}\n"
+"QPushButton:hover {\n"
+"    border: 2px solid rgb(110, 99, 93);;\n"
+"    background-color: rgb(212, 244, 211);\n"
+"}")
         self.myBooksBtn.setObjectName("myBooksBtn")
         self.verticalLayout_3.addWidget(self.myBooksBtn)
         self.browseLibraryBtn = QtWidgets.QPushButton(self.groupBox)
@@ -174,7 +200,18 @@ class Ui_MainWindow(object):
         font.setBold(False)
         font.setWeight(50)
         self.browseLibraryBtn.setFont(font)
-        self.browseLibraryBtn.setStyleSheet("border-radius: 10px; background-color: white; text-align: left; padding-left: 30px;")
+        self.browseLibraryBtn.setStyleSheet("QPushButton {\n"
+"    border-radius: 10px;\n"
+"    background-color: white; \n"
+"    text-align: left; \n"
+"    padding-left: 30px;\n"
+"    color: rgb(74, 66, 62);\n"
+"\n"
+"}\n"
+"QPushButton:hover {\n"
+"    border: 2px solid rgb(110, 99, 93);;\n"
+"    background-color: rgb(212, 244, 211);\n"
+"}")
         self.browseLibraryBtn.setObjectName("browseLibraryBtn")
         self.verticalLayout_3.addWidget(self.browseLibraryBtn)
         self.ReservationsBtn = QtWidgets.QPushButton(self.groupBox)
@@ -189,7 +226,18 @@ class Ui_MainWindow(object):
         font.setBold(False)
         font.setWeight(50)
         self.ReservationsBtn.setFont(font)
-        self.ReservationsBtn.setStyleSheet("border-radius: 10px; background-color: white; text-align: left; padding-left: 30px;")
+        self.ReservationsBtn.setStyleSheet("QPushButton {\n"
+"    border-radius: 10px;\n"
+"    background-color: white; \n"
+"    text-align: left; \n"
+"    padding-left: 30px;\n"
+"    color: rgb(74, 66, 62);\n"
+"\n"
+"}\n"
+"QPushButton:hover {\n"
+"    border: 2px solid rgb(110, 99, 93);;\n"
+"    background-color: rgb(212, 244, 211);\n"
+"}")
         self.ReservationsBtn.setObjectName("ReservationsBtn")
         self.verticalLayout_3.addWidget(self.ReservationsBtn)
         self.historyBtn = QtWidgets.QPushButton(self.groupBox)
@@ -204,7 +252,18 @@ class Ui_MainWindow(object):
         font.setBold(False)
         font.setWeight(50)
         self.historyBtn.setFont(font)
-        self.historyBtn.setStyleSheet("border-radius: 10px; background-color: white; text-align: left; padding-left: 30px;")
+        self.historyBtn.setStyleSheet("QPushButton {\n"
+"    border-radius: 10px;\n"
+"    background-color: white; \n"
+"    text-align: left; \n"
+"    padding-left: 30px;\n"
+"    color: rgb(74, 66, 62);\n"
+"\n"
+"}\n"
+"QPushButton:hover {\n"
+"    border: 2px solid rgb(110, 99, 93);;\n"
+"    background-color: rgb(212, 244, 211);\n"
+"}")
         self.historyBtn.setObjectName("historyBtn")
         self.verticalLayout_3.addWidget(self.historyBtn)
         self.favoritesBtn = QtWidgets.QPushButton(self.groupBox)
@@ -219,7 +278,18 @@ class Ui_MainWindow(object):
         font.setBold(False)
         font.setWeight(50)
         self.favoritesBtn.setFont(font)
-        self.favoritesBtn.setStyleSheet("border-radius: 10px; background-color: white; text-align: left; padding-left: 30px;")
+        self.favoritesBtn.setStyleSheet("QPushButton {\n"
+"    border-radius: 10px;\n"
+"    background-color: white; \n"
+"    text-align: left; \n"
+"    padding-left: 30px;\n"
+"    color: rgb(74, 66, 62);\n"
+"\n"
+"}\n"
+"QPushButton:hover {\n"
+"    border: 2px solid rgb(110, 99, 93);;\n"
+"    background-color: rgb(212, 244, 211);\n"
+"}")
         self.favoritesBtn.setObjectName("favoritesBtn")
         self.verticalLayout_3.addWidget(self.favoritesBtn)
         self.verticalLayout_5.addLayout(self.verticalLayout_3)
@@ -244,7 +314,18 @@ class Ui_MainWindow(object):
         font.setFamily("Inter Variable Text Medium")
         font.setPointSize(13)
         self.settingsBtn.setFont(font)
-        self.settingsBtn.setStyleSheet("border-radius: 10px; background-color: white; text-align: left; padding-left: 30px;")
+        self.settingsBtn.setStyleSheet("QPushButton {\n"
+"    border-radius: 10px;\n"
+"    background-color: white; \n"
+"    text-align: left; \n"
+"    padding-left: 30px;\n"
+"    color: rgb(74, 66, 62);\n"
+"\n"
+"}\n"
+"QPushButton:hover {\n"
+"    border: 2px solid rgb(110, 99, 93);;\n"
+"    background-color: rgb(212, 244, 211);\n"
+"}")
         self.settingsBtn.setObjectName("settingsBtn")
         self.verticalLayout_4.addWidget(self.settingsBtn)
         self.helpBtn = QtWidgets.QPushButton(self.groupBox)
@@ -257,17 +338,24 @@ class Ui_MainWindow(object):
         font.setFamily("Inter Variable Text Medium")
         font.setPointSize(13)
         self.helpBtn.setFont(font)
-        self.helpBtn.setStyleSheet("border-radius: 10px; background-color: white; text-align: left; padding-left: 30px;")
+        self.helpBtn.setStyleSheet("QPushButton {\n"
+"    border-radius: 10px;\n"
+"    background-color: white; \n"
+"    text-align: left; \n"
+"    padding-left: 30px;\n"
+"    color: rgb(74, 66, 62);\n"
+"\n"
+"}\n"
+"QPushButton:hover {\n"
+"    border: 2px solid rgb(110, 99, 93);;\n"
+"    background-color: rgb(212, 244, 211);\n"
+"}")
         self.helpBtn.setObjectName("helpBtn")
         self.verticalLayout_4.addWidget(self.helpBtn)
         self.verticalLayout_5.addLayout(self.verticalLayout_4)
         self.verticalLayout_5.setStretch(0, 4)
         self.verticalLayout_5.setStretch(2, 2)
-        self.gridLayout.addWidget(self.groupBox, 0, 0, 5, 1)
-        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem2, 3, 6, 1, 1)
-        spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.gridLayout.addItem(spacerItem3, 4, 5, 1, 1)
+        self.gridLayout.addWidget(self.groupBox, 0, 0, 6, 1)
         self.widget = QtWidgets.QWidget(self.centralwidget)
         self.widget.setStyleSheet("background-color: white;")
         self.widget.setObjectName("widget")
@@ -276,13 +364,58 @@ class Ui_MainWindow(object):
         self.widget_3.setStyleSheet("background-color: white;")
         self.widget_3.setObjectName("widget_3")
         self.gridLayout.addWidget(self.widget, 0, 1, 1, 1)
-        spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.gridLayout.addItem(spacerItem4, 2, 5, 1, 1)
+        spacerItem4 = QtWidgets.QSpacerItem(20, 80, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.gridLayout.addItem(spacerItem4, 1, 3, 1, 1)
+        spacerItem5 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.gridLayout.addItem(spacerItem5, 3, 5, 1, 1)
+        self.booksTableWidget = QtWidgets.QTableWidget(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.MinimumExpanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.booksTableWidget.sizePolicy().hasHeightForWidth())
+        self.booksTableWidget.setSizePolicy(sizePolicy)
+        self.booksTableWidget.setStyleSheet("QTableWidget {\n"
+"    border: 2px solid rgb(110, 99, 93);\n"
+"}\n"
+"\n"
+"\n"
+"QHeaderView::section:horizontal {\n"
+"    background-color: #c3b0a5;\n"
+"    color: black;\n"
+"    text-align: left;\n"
+"    padding-left: 15px;\n"
+"    padding-top: 15px;\n"
+"    padding-bottom: 15px;\n"
+"}\n"
+"\n"
+"")
+        self.booksTableWidget.setShowGrid(True)
+        self.booksTableWidget.setGridStyle(QtCore.Qt.SolidLine)
+        self.booksTableWidget.setObjectName("booksTableWidget")
+        self.booksTableWidget.setColumnCount(3)
+        self.booksTableWidget.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        item.setFont(font)
+        item.setBackground(QtGui.QColor(195, 176, 165))
+        self.booksTableWidget.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        item.setFont(font)
+        item.setBackground(QtGui.QColor(195, 176, 165))
+        self.booksTableWidget.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        item.setFont(font)
+        item.setBackground(QtGui.QColor(195, 176, 165))
+        self.booksTableWidget.setHorizontalHeaderItem(2, item)
+        self.gridLayout.addWidget(self.booksTableWidget, 2, 3, 1, 1)
         self.gridLayout.setColumnStretch(0, 1)
         self.gridLayout.setColumnStretch(3, 4)
         self.gridLayout.setRowStretch(0, 1)
-        self.gridLayout.setRowStretch(1, 4)
-        self.gridLayout.setRowStretch(3, 1)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -305,6 +438,12 @@ class Ui_MainWindow(object):
         self.favoritesBtn.setText(_translate("MainWindow", "Favorites"))
         self.settingsBtn.setText(_translate("MainWindow", "Settings"))
         self.helpBtn.setText(_translate("MainWindow", "Help"))
+        item = self.booksTableWidget.horizontalHeaderItem(0)
+        item.setText(_translate("MainWindow", "Title"))
+        item = self.booksTableWidget.horizontalHeaderItem(1)
+        item.setText(_translate("MainWindow", "Author"))
+        item = self.booksTableWidget.horizontalHeaderItem(2)
+        item.setText(_translate("MainWindow", "Due Date"))
 
 
 if __name__ == "__main__":
