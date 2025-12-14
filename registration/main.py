@@ -19,8 +19,8 @@ def show_error_message(exc_type, exc_value, exc_traceback):
 sys.excepthook = show_error_message
 
 
-ADMINUSERNAME = "ADMINUSERNAME"       # replace with your actual admin username
-ADMINPASSWORD = "ADMINPASSWORD"    # replace with your actual admin password
+ADMINUSERNAME = "ADMINUSERNAME" 
+ADMINPASSWORD = "ADMINPASSWORD" 
 
 
 class LoginPage(QMainWindow):
@@ -73,6 +73,7 @@ class LoginPage(QMainWindow):
     def open_registration(self):
             self.registration_window = RegistrationWindow()
             self.registration_window.showMaximized()
+            self.close()
 
     # clear field after user logs in
     def clear_fields(self):
@@ -104,6 +105,13 @@ class RegistrationWindow(QMainWindow):
 
         # connect submit button
         self.ui.btnSubmit.clicked.connect(self.register_user)
+        # connect back to login page button
+        self.ui.btnBack.clicked.connect(self.back_to_login)
+
+    def back_to_login(self):
+        self.login_window = LoginPage()
+        self.login_window.showMaximized()
+        self.close()
 
     def validateStudentLogin(self, username, password):
         csv_file = os.path.join(os.path.dirname(__file__), "users.csv")
